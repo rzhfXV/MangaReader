@@ -4,19 +4,20 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="?attr/colorSurface">
 
     <ImageView
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:src="@android:drawable/sym_def_app_icon"
+        android:src="@drawable/profile"
         android:layout_marginBottom="16dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Logged in as:"
-        android:textColor="#888888"
+        android:textColor="?attr/colorOutline"
         android:textSize="14sp" />
 
     <TextView
@@ -24,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="user@email.com"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="32dp" />

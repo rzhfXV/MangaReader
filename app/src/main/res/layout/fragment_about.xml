@@ -4,12 +4,13 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="?attr/colorSurface">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TUGAS UAS PRAKTIKUM PAB"
+        android:text="About"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="24dp"/>
@@ -17,30 +18,41 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nama : Raihan Zhafran"
+        android:text="@string/desc"
+        android:textAlignment="center"
         android:textSize="16sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NIM : 20240810054"
+        android:text="Developer "
+        android:textAlignment="center"
         android:textSize="16sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="1dp"
+        android:textColor="?attr/colorOutline"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prodi : Teknik Informatika"
+        android:text="rzhfXV"
         android:textSize="16sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="16dp"
+        android:textColor="?attr/colorOutline"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UNIVERSITAS KUNINGAN"
+        android:text="Version"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@android:color/darker_gray"/>
+        android:textColor="?attr/colorOutline"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.0.0 (Build 1)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOutline"/>
 
 </LinearLayout>

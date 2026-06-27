@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Chapter X"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -21,11 +22,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Judul Chapter"
-        android:textColor="#666666" />
+        android:textColor="?attr/colorOutline" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#E0E0E0"
+        android:background="?attr/colorOutline"
         android:layout_marginTop="12dp"/>
 </LinearLayout>

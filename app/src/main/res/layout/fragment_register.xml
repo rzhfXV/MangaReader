@@ -4,13 +4,15 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="?attr/colorSurface">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="Buat Akun Baru"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -19,6 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:textColorHint="?attr/colorOnSurface"
+        android:textColor="?attr/colorOnSurface"
         android:inputType="textEmailAddress"
         android:layout_marginBottom="16dp" />
 
@@ -27,6 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password (Min. 6 karakter)"
+        android:textColorHint="?attr/colorOnSurface"
+        android:textColor="?attr/colorOnSurface"
         android:inputType="textPassword"
         android:layout_marginBottom="24dp" />
 
