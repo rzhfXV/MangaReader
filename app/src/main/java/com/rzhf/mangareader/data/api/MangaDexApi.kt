@@ -8,7 +8,7 @@ import retrofit2.http.Path
 interface MangaDexApi {
     @GET("/manga")
     suspend fun getMangaList(
-        @Query("limit") limit: Int = 10,
+        @Query("limit") limit: Int = 50,
         @Query("title") title: String? = null,
         @Query("includes[]") includes: String = "cover_art" // Biar dapet cover-nya sekalian
     ): Response<MangaResponse>
@@ -21,13 +21,14 @@ interface MangaDexApi {
 
     @GET("/manga/{id}")
     suspend fun getMangaDetail(
-        @Path("id") id: String
+        @Path("id") id: String,
+        @Query("includes[]") includes: String = "cover_art"
     ): Response<MangaDetailResponse>
 
     @GET("/manga/{id}/feed")
     suspend fun getMangaFeed(
         @Path("id") id: String,
         @Query("translatedLanguage[]") translatedLanguage: List<String> = listOf("en"), // Ambil bahasa Inggris saja biar rapi
-        @Query("order[chapter]") order: String = "asc" // Urutkan dari chapter awal
+        @Query("order[chapter]") order: String = "desc" // Urutkan dari chapter terbaru
     ): Response<ChapterListResponse>
 }

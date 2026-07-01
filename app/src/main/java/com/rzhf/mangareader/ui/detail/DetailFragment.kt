@@ -3,11 +3,14 @@ package com.rzhf.mangareader.ui.detail
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.rzhf.mangareader.R
 import com.rzhf.mangareader.data.api.RetrofitClient
 import kotlinx.coroutines.Dispatchers
@@ -22,6 +25,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         val tvTitle = view.findViewById<TextView>(R.id.tvDetailTitle)
         val tvDesc = view.findViewById<TextView>(R.id.tvDetailDesc)
         val btnViewChapters = view.findViewById<Button>(R.id.btnViewChapters)
+        val ivDetailMangaImg = view.findViewById<ImageView>(R.id.ivDetailMangaImg)
 
         val mangaId = arguments?.getString("mangaId") ?: return
 
@@ -32,8 +36,23 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                     if (response.isSuccessful && response.body() != null) {
                         val manga = response.body()!!.data
 
+                        val imgStr = manga.relationships?.find { it.type == "cover_art" }
+                        val fileName = imgStr?.attributes?.fileName
                         val titleStr = manga.attributes.title["en"] ?: manga.attributes.title.values.firstOrNull() ?: "Tanpa Judul"
                         val descStr = manga.attributes.description?.get("en") ?: "Sinopsis tidak tersedia."
+
+                        if (fileName != null) {
+                            val coverUrl = "https://uploads.mangadex.org/covers/$mangaId/$fileName"
+
+                            Glide.with(this@DetailFragment)
+                                .load(coverUrl)
+                                .centerCrop()
+                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                .into(ivDetailMangaImg)
+                        } else {
+                            // Kosongkan gambar jika tidak ada cover
+                            ivDetailMangaImg.setImageDrawable(null)
+                        }
 
                         tvTitle.text = titleStr
                         tvDesc.text = descStr

@@ -40,6 +40,14 @@
         android:layout_marginBottom="16dp"
         android:textColor="?attr/colorOutline"/>
 
+    <Button
+        android:id="@+id/btnGithub"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="GitHub Repository" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,10 +55,11 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?attr/colorOutline"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1.0.0 (Build 1)"
+        android:text="1.0.1 (Build 1)"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="?attr/colorOutline"/>
